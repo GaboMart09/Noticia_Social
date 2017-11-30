@@ -1,17 +1,5 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : MariaDBLenovo
-Source Server Version : 50505
-Source Host           : localhost:3307
-Source Database       : noticia
-
-Target Server Type    : MYSQL
-Target Server Version : 50505
-File Encoding         : 65001
-
-Date: 2017-11-29 21:08:54
-*/
+CREATE DATABASE noticia;
+USE noticia;
 
 SET FOREIGN_KEY_CHECKS=0;
 
