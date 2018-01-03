@@ -1,0 +1,48 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Twister</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <ion-item *ngFor="let usuario of usuario" color="none" id="twister-list-item11">
+                <ion-avatar item-left>
+                    <ion-icon name='contact' item-start style="color: gray; font-size: 60px"></ion-icon>
+                </ion-avatar>
+                <h2>
+                    {{usuario.nick}}
+                </h2>
+                <h4>{{usuario.email}}</h4>
+            </ion-item>
+            <ion-item color="none" menuClose="" on-click="ModuloInicio()" id="twister-list-item1">
+                <ion-icon name="globe" item-left></ion-icon>
+                Inicio
+            </ion-item>
+            <ion-item color="none" menuClose="" on-click="ModuloMisPublicaciones()" id="twister-list-item2">
+                <ion-icon name="ios-browsers" item-left></ion-icon>
+                Mis Publicaciones
+            </ion-item>
+            <ion-item color="none" menuClose="" on-click="ModuloPerfil()" id="twister-list-item2">
+                <ion-icon name="contact" item-left></ion-icon>
+                Perfil
+            </ion-item>
+            <ion-item color="none" menuClose="" on-click="ModuloSiguiendo()" id="twister-list-item3">
+                <ion-icon name="people" item-left></ion-icon>
+                Siguiendo
+            </ion-item>
+            <ion-item color="none" menuClose="" on-click="ModuloSeguir()" id="twister-list-item4">
+                <ion-icon name="md-git-branch" item-left></ion-icon>
+                Buscar Personas
+            </ion-item>
+            <ion-item color="none" menuClose="" on-click="CerrarSesion()" id="twister-list-item5">
+                <ion-icon name="md-log-out" item-left></ion-icon>
+                Cerrar Sesión
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

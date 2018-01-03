@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="md-options"></ion-icon>
+    </button>
+    <ion-title>Buscar Personas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-searchbar outline [(ngModel)]="persona" name="persona" showCancelButton color="danger" (ionCancel)="BuscarItems()"></ion-searchbar>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button outline color="dark" (click)="BuscarPersonasBuscador()">
+          <ion-icon name="md-search"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-avatar item-start>
+        <ion-icon name='contact' item-start style="color: gray; font-size: 60px"></ion-icon>
+      </ion-avatar>
+      <h2>{{item.nombre}}</h2>
+      <p>{{item.nick}}</p>
+
+      <a class="button" item-end style="font-size: 30px">
+        <button ion-button color="secondary" type="submit" (click)="SeguirPersona(item.idPersona)">
+          <ion-icon name="md-person-add" style="font-size: 20px"></ion-icon></button>
+      </a>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

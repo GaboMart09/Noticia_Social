@@ -1,0 +1,57 @@
+<!--
+  Generated template for the MisPublicacionesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="md-options"></ion-icon>
+        </button>
+    <ion-title>Mis Publicaciones</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let publicaciones of publicaciones">
+
+    <ion-item>
+      <ion-icon name='contact' item-start style="color: gray; font-size: 60px"></ion-icon>
+      <b>{{publicaciones.nick}}</b>
+      <br>
+      <p>{{publicaciones.fechaHora | date: 'dd/MM/yyyy HH:mm:ss' }}</p>
+    </ion-item>
+
+    <img src="{{publicaciones.foto}}"  />
+
+    <ion-card-content>
+      <br>
+      <h5 style="font-weight: bold">{{publicaciones.tipo}}</h5>
+      <br>
+      <p style="font-size: 14px; text-align: justify">
+        {{publicaciones.descripcion}}
+      </p>
+      <p>
+        <a href="">Leer Más</a>
+      </p>
+    </ion-card-content>
+    <hr>
+    <ion-item>
+      <div class="button-bar bar-stable">
+        <a class="button">
+          <button ion-button color="secondary" type="submit">
+            <ion-icon name="md-thumbs-up"></ion-icon>&nbsp; 125</button>
+        </a>
+        <a class="button">
+          <button ion-button type="submit">
+            <ion-icon name="md-chatboxes"></ion-icon>&nbsp; 15</button>
+        </a>
+      </div>
+    </ion-item>
+
+  </ion-card>
+</ion-content>

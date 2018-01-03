@@ -1,0 +1,30 @@
+<ion-content padding>
+
+  <ion-img style="width: 310px; height: 133px;  margin-left: auto; margin-right: auto; display: block;" src="assets/imgs/twister-logo.png"></ion-img>
+  
+  <br>
+
+  <form (submit)="IniciarSesion()">
+    <ion-list padding>
+
+      <ion-label style="text-align: center; font-size: 20px; font-weight: bold">INGRESAR A LA COMUNIDAD</ion-label>
+
+      <ion-item>
+        <ion-input [(ngModel)]="email_usu" name="email_usu" type="email" placeholder="Ingresar Correo Electrónico"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="pass_usu" name="pass_usu" type="password" placeholder="Ingresar Contraseña"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button outline block color="primary" type="submit">INGRESAR</button>
+    </div>
+  </form>
+  <div padding>
+    <button ion-button block outline color="secondary" (click)="ModuloRegistrar()">CREAR CUENTA</button>
+  </div>
+
+</ion-content>

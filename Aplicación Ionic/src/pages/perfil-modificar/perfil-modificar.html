@@ -1,0 +1,76 @@
+<!--
+  Generated template for the PerfilModificarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="md-options"></ion-icon>
+    </button>
+    <ion-title>Mi Perfil - Modificar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (submit)="ModificarPersona()">
+    <ion-list>
+      <ion-item style="display: none">
+        <ion-input [(ngModel)]="id_per" name="id_per" type="number" placeholder="Codigo de Usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold">Nick:</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="nick_per" name="nick_per" type="text" placeholder="Nick de Usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold">Nombre Completo:</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="nombre_per" name="nombre_per" type="text" placeholder="Nombre Completo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold">Teléfono:</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="telefono_per" name="telefono_per" type="text" placeholder="Número de Teléfono"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold">Dirección:</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="direccion_per" name="direccion_per" type="text" placeholder=" Direccion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold">Género</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="genero" name="genero" [selectOptions]="MensajeGenero" style="max-width: 100% !important;">
+          <ion-option *ngFor="let o of genero_per" [value]="o.value" style="width: 100%">{{o.text}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold">País</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-select [(ngModel)]="pais" name="pais" [selectOptions]="MensajePais" style="max-width: 100% !important;">
+          <ion-option *ngFor="let o of paises_per" [value]="o.value" style="width: 100%">{{o.text}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold">Correo Electrónico</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="email_per" name="email_per" type="email" placeholder="Correo Electrónico" disabled></ion-input>
+      </ion-item>
+    </ion-list>
+    <div>
+      <button ion-button block color="primary" type="submit">MODIFICAR</button>
+    </div>
+  </form>
+</ion-content>

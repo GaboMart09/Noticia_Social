@@ -1,0 +1,59 @@
+<!--
+  Generated template for the PerfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="md-options"></ion-icon>
+    </button>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let usuario of usuario">
+    <img src="assets/imgs/user-default.jpg"/>
+    <ion-card-content>
+      <ion-card-title style="font-weight: bold">
+        {{usuario.nick}}
+      </ion-card-title>
+      <p>
+        {{usuario.nombrePersona}}
+        <br> {{usuario.email}}
+      </p>
+    </ion-card-content>
+
+    <ion-item style="display: none">
+      <ion-input [(ngModel)]="id_per" name="id_per" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='ios-call' item-start style="color: #387EF5"></ion-icon>
+      {{usuario.telefono}}
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='md-compass' item-start style="color: #387EF5"></ion-icon>
+      {{usuario.direccion}}
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='ios-people' item-start style="color: #387EF5"></ion-icon>
+      {{usuario.nombreGenero}}
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='md-pin' item-start style="color: #387EF5"></ion-icon>
+      {{usuario.nombrePais}}
+    </ion-item>
+  </ion-card>
+
+  <button ion-button block color="primary" type="submit" (click)="ModuloModificarPerfil()">MODIFICAR PERFIL</button>
+
+</ion-content>

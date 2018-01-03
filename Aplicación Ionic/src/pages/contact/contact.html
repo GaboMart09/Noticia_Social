@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="md-options"></ion-icon>
+    </button>
+    <ion-title>
+      Publicar Noticia
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-label style="font-size: 18px; font-weight: bold">Ingresar Descripción de la Noticia</ion-label>
+  <ion-textarea [(ngModel)]="descripcion_pub" rows="6" maxLength="250" name="descripcion_pub"></ion-textarea>
+
+  <button ion-button icon-left (click)="presentActionSheet()">
+    <ion-icon name="sampleFile"></ion-icon>Seleccionar Imagen
+  </button>
+  <hr>
+
+  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+  <h5 [hidden]="lastImage !== null">Imagen</h5>
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button icon-left color="primary" (click)="uploadImage()" [disabled]="lastImage === null" style="width: 100%">
+    <ion-icon name="cloud-upload"></ion-icon>Publicar
+  </button>
+</ion-footer>
